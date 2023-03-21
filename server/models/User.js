@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const UserSchema = new mongoose.Schema({
+  admin: {type: Boolean, default: false},
   displayName: { type: String, unique: true },
   discordId: { type: String, unique: true },
   avatar: { type: String },
@@ -20,3 +21,4 @@ UserSchema.virtual("avatarURL").get(function () {
 });
 
 module.exports = mongoose.model("User", UserSchema);
+

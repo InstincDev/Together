@@ -4,7 +4,7 @@ import useProvideRouting from "./useProvideRouting";
 // Creating a named context
 const RoutingContext = createContext();
 
-// Creat a hook for consuming context
+// Create a hook for consuming context
 export const useRoutingContext = () => {
   return useContext(RoutingContext);
 };

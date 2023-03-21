@@ -6,6 +6,7 @@ import { useRoutingContext } from "contexts/RoutingContext";
 import { useAuthContext } from "contexts/AuthContext";
 import LandingPage from "pages/LandingPage";
 import CalendarPage from "pages/CalendarPage";
+import DashboardPage from "pages/DashboardPage";
 
 function App() {
   const routing = useRoutingContext();
@@ -13,6 +14,7 @@ function App() {
   const isAuthenticated = auth.isAuthenticated();
   const isNot100Dever = auth.isNot100Dever();
   const deleteNeedsToBeWelcome = auth.deleteNeedsToBeWelcome;
+  const admin = false;
   //Sets rejection modal to true because updating state is a pain
   //Line 52 will prevent the modal from rendering unless user is not 100Dever
   const [rejectionModalOpen, setRejectionModalOpen] = useState(true);
@@ -49,6 +51,8 @@ function App() {
 
       {routing.currentPage === "landingPage" && <LandingPage />}
       {routing.currentPage === "calendarPage" && <CalendarPage />}
+      {console.log()}
+      {routing.currentPage === "dashboardPage" && <DashboardPage />}
     </>
   );
 }
