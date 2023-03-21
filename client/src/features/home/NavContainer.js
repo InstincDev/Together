@@ -6,6 +6,7 @@ import {
   FaChevronCircleRight,
   FaRegCalendarAlt,
 } from "react-icons/fa";
+import { GiEvilMinion } from "react-icons/gi";
 import { useAuthContext } from "contexts/AuthContext";
 
 const NavContainer = () => {
@@ -15,6 +16,7 @@ const NavContainer = () => {
     <nav className="hidden md:flex justify-between w-full">
       <LogoContainer logo={"./logoicon.png"} logotext={"./logotext.png"} />
       <NavButtons
+        DashIcon={GiEvilMinion}
         HomeIcon={FaHome}
         LoginIcon={
           isAuthenticated() ? FaChevronCircleLeft : FaChevronCircleRight
